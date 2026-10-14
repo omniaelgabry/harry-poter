@@ -1,0 +1,22 @@
+.hogwarts-app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+.site-logo-container {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
+.site-logo {
+  width: 150px;
+  height: auto;
+  filter: drop-shadow(0 0 5px rgba(255,255,255,0.3));
+}

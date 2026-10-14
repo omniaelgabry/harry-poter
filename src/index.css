@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+@font-face {
+  font-family: 'Harry P';
+  src: url('https://db.onlinewebfonts.com/t/2c4c1a74d232dcafae4a3a693c1d4eb6.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Navy & Purple Theme */
+  --bg-primary: #050b14; /* Deep Navy Blue */
+  --bg-secondary: #0a1122; /* Lighter Navy */
+  --text-primary: #e2e8f0;
+  --text-secondary: #a78bfa; /* Soft Purple */
+  --accent-color: #8b5cf6; /* Vibrant Purple */
+  --accent-hover: #a78bfa;
+  --glow-color: rgba(139, 92, 246, 0.4);
+  --border-color: rgba(139, 92, 246, 0.2);
+  
+  --font-primary: 'Cinzel', serif;
+  --font-secondary: 'Playfair Display', serif;
+  --font-magic: 'Harry P', sans-serif;
+  
+  --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-secondary);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  transition: background-color 0.8s ease;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+.magic-text {
+  font-family: var(--font-magic);
+  letter-spacing: 2px;
+}
+
+/* Cursor (will be hidden by custom wand cursor) */
+.custom-cursor-active {
+  cursor: none;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}

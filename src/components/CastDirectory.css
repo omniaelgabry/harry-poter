@@ -1,0 +1,82 @@
+.cast-section {
+  padding: 100px 20px;
+  background-color: var(--bg-secondary);
+}
+
+.cast-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cast-card {
+  text-align: center;
+  cursor: pointer;
+}
+
+.cast-image-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border: 2px solid var(--border-color);
+  transition: var(--transition-smooth);
+}
+
+.cast-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+  filter: grayscale(0.3);
+}
+
+.cast-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px 10px 15px;
+  background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.cast-role {
+  font-family: var(--font-primary);
+  color: var(--accent-color);
+  font-size: 1.2rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
+
+.cast-name {
+  font-family: var(--font-primary);
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+.cast-card:hover .cast-image-container {
+  border-color: var(--accent-hover);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 20px var(--glow-color);
+}
+
+.cast-card:hover .cast-image {
+  transform: scale(1.1);
+  filter: grayscale(0);
+}
+
+.cast-card:hover .cast-overlay {
+  transform: translateY(0);
+}
+
+.cast-card:hover .cast-name {
+  color: var(--accent-color);
+}

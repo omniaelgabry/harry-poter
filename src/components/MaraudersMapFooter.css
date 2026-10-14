@@ -1,0 +1,87 @@
+.marauders-footer {
+  position: relative;
+  min-height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: #d4c4a8; /* Parchment base */
+}
+
+.parchment-texture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://www.transparenttextures.com/patterns/aged-paper.png');
+  opacity: 0.6;
+  mix-blend-mode: multiply;
+  z-index: 1;
+}
+
+.footer-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  color: #3b2e04;
+}
+
+.mischief-text {
+  font-size: 5rem;
+  color: #4a0c16; /* Faded ink red */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+  margin-bottom: 20px;
+  animation: revealInk 3s ease forwards;
+}
+
+.copyright {
+  font-family: var(--font-secondary);
+  font-style: italic;
+  font-size: 1rem;
+}
+
+.footprints-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.footprint {
+  position: absolute;
+  width: 15px;
+  height: 25px;
+  background-color: rgba(74, 12, 22, 0.4); /* Ink color */
+  border-radius: 40% 40% 20% 20%;
+  opacity: 0;
+  animation: stepFade 4s forwards;
+}
+
+/* Add a little heel to the footprint */
+.footprint::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 10px;
+  background-color: rgba(74, 12, 22, 0.4);
+  border-radius: 50%;
+}
+
+@keyframes stepFade {
+  0% { opacity: 0; transform: translateY(10px) scale(0.9); }
+  10% { opacity: 1; transform: translateY(0) scale(1); }
+  80% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes revealInk {
+  0% { opacity: 0; filter: blur(5px); }
+  100% { opacity: 1; filter: blur(0); }
+}

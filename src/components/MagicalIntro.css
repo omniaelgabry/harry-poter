@@ -1,0 +1,99 @@
+.magical-intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #050810; /* Very dark night */
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+  cursor: pointer;
+}
+
+.magical-intro.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.intro-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.6; /* Dim the video a bit so text is readable */
+}
+
+.intro-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.intro-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.intro-image {
+  width: 250px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 20px var(--glow-color);
+  animation: textReveal 2s ease-out forwards;
+}
+
+.wand-glow {
+  font-size: 5rem;
+  color: var(--accent-color);
+  text-shadow: 0 0 20px var(--glow-color), 0 0 40px var(--glow-color);
+  animation: glowPulse 2s infinite alternate, textReveal 2s ease-out forwards;
+  opacity: 0;
+}
+
+.enter-btn {
+  font-family: var(--font-primary);
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--accent-color);
+  padding: 0.8rem 2.5rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  animation: fadeIn 2s ease-out 1.5s forwards;
+  opacity: 0;
+}
+
+.enter-btn:hover {
+  background: var(--glow-color);
+  box-shadow: 0 0 15px var(--glow-color);
+}
+
+@keyframes glowPulse {
+  0% { text-shadow: 0 0 10px var(--glow-color); }
+  100% { text-shadow: 0 0 30px var(--glow-color), 0 0 50px var(--glow-color); }
+}
+
+@keyframes textReveal {
+  0% { opacity: 0; transform: scale(0.9); filter: blur(10px); }
+  100% { opacity: 1; transform: scale(1); filter: blur(0); }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
